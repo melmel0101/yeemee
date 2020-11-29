@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="32001">
+        <setting id="ServiceOn" label="32000" type="bool" default="true" visible="true" />
+        <setting id="AmbiOn" label="32046" type="bool" default="false" visible="true" />
+        <setting label="32104" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/discover.py,discover)"  visible="true" default="" />
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" default="0" />
+
+        <setting id="bulb_1" type="ipaddress" label="32021" visible="gt(-1,0)" default="" subsetting="false" />
+        <setting id="bulb_1_model" type="labelenum" label="32109" visible="gt(-2,0)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_1_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-3,0) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_1_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-4,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+
+        <setting id="bulb_2" type="ipaddress" label="32022" visible="gt(-5,1)" default="" subsetting="false" />
+        <setting id="bulb_2_model" type="labelenum" label="32109" visible="gt(-6,1)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_2_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-7,1) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_2_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-8,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+
+        <setting id="bulb_3" type="ipaddress" label="32023" visible="gt(-9,2)" default="" subsetting="false" />
+        <setting id="bulb_3_model" type="labelenum" label="32109" visible="gt(-10,2)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_3_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-11,2) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_3_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-12,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+
+        <setting id="bulb_4" type="ipaddress" label="32024" visible="gt(-13,3)" default="" subsetting="false" />
+        <setting id="bulb_4_model" type="labelenum" label="32109" visible="gt(-14,3)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_4_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-15,3) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_4_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-16,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+
+        <setting id="bulb_5" type="ipaddress" label="32025" visible="gt(-17,4)" default="" subsetting="false" />
+        <setting id="bulb_5_model" type="labelenum" label="32109" visible="gt(-18,4)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_5_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-19,4) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_5_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-20,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+
+        <setting id="bulb_6" type="ipaddress" label="32026" visible="gt(-21,5)" default="" subsetting="false" />
+        <setting id="bulb_6_model" type="labelenum" label="32109" visible="gt(-22,5)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_6_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-23,5) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_6_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-24,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+
+        <setting id="bulb_7" type="ipaddress" label="32027" visible="gt(-25,6)" default="" subsetting="false" />
+        <setting id="bulb_7_model" type="labelenum" label="32109" visible="gt(-26,6)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_7_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-27,6) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_7_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-28,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+
+        <setting id="bulb_8" type="ipaddress" label="32028" visible="gt(-29,7)" default="" subsetting="false" />
+        <setting id="bulb_8_model" type="labelenum" label="32109" visible="gt(-30,7)" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_8_ambipos" type="enum" label="32150" lvalues="32170|32171|32172|32173|32174|32175|32176|32177|32178|32179" visible="gt(-31,7) + !eq(-1,1) + !eq(-1,3) + !eq(-1,5)" default="0" subsetting="true" option="int" />
+        <setting id="bulb_8_bias" type="slider" label="32151" default="0" range="0,10,50" visible="gt(-1,0) + gt(-32,0) + !eq(-2,1) + !eq(-2,3)" option="int" />
+    </category>
+    <category label="32002">
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" visible="false" />
+
+        <setting label="32021" type="lsep" visible="gt(-1,0)" />
+        <setting id="bulb_1_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_1_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-3,0)" default="0" />
+        <setting id="bulb_1_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-4,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_play_color" type="text" label="32043" visible="gt(-5,0) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-6,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-7,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_1_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-8,0) + eq(-6,4)" default="0" />
+        <setting id="bulb_1_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-9,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_play_bg_color" type="text" label="32043" visible="gt(-10,0) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-11,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-12,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32022" type="lsep" visible="gt(-13,1)" />
+        <setting id="bulb_2_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_2_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-15,1)" default="0" />
+        <setting id="bulb_2_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-16,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_play_color" type="text" label="32043" visible="gt(-17,1) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-18,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-19,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_2_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-20,1) + eq(-6,4)" default="0" />
+        <setting id="bulb_2_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-21,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_play_bg_color" type="text" label="32043" visible="gt(-22,1) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-23,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-24,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32023" type="lsep" visible="gt(-25,2)" />
+        <setting id="bulb_3_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_3_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-27,2)" default="0" />
+        <setting id="bulb_3_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-28,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_play_color" type="text" label="32043" visible="gt(-29,2) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-30,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-31,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_3_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-32,2) + eq(-6,4)" default="0" />
+        <setting id="bulb_3_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-33,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_play_bg_color" type="text" label="32043" visible="gt(-34,2) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-35,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-36,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32024" type="lsep" visible="gt(-37,3)" />
+        <setting id="bulb_4_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_4_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-39,3)" default="0" />
+        <setting id="bulb_4_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-40,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_play_color" type="text" label="32043" visible="gt(-41,3) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-42,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-43,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_4_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-44,3) + eq(-6,4)" default="0" />
+        <setting id="bulb_4_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-45,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_play_bg_color" type="text" label="32043" visible="gt(-46,3) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-47,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-48,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+
+        <setting label="32025" type="lsep" visible="gt(-49,4)" />
+        <setting id="bulb_5_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_5_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-51,4)" default="0" />
+        <setting id="bulb_5_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-52,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_play_color" type="text" label="32043" visible="gt(-53,4) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-54,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-55,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_5_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-56,4) + eq(-6,4)" default="0" />
+        <setting id="bulb_5_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-57,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_play_bg_color" type="text" label="32043" visible="gt(-58,4) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-59,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-60,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32026" type="lsep" visible="gt(-61,5)" />
+        <setting id="bulb_6_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_6_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-63,5)" default="0" />
+        <setting id="bulb_6_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-64,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_play_color" type="text" label="32043" visible="gt(-65,5) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-66,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-67,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_6_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-68,5) + eq(-6,4)" default="0" />
+        <setting id="bulb_6_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-69,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_play_bg_color" type="text" label="32043" visible="gt(-70,5) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-71,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-72,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32027" type="lsep" visible="gt(-73,6)" />
+        <setting id="bulb_7_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_7_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-75,6)" default="0" />
+        <setting id="bulb_7_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-76,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_play_color" type="text" label="32043" visible="gt(-77,6) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-78,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-79,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_7_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-80,6) + eq(-6,4)" default="0" />
+        <setting id="bulb_7_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-81,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_play_bg_color" type="text" label="32043" visible="gt(-82,6) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-83,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-84,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32028" type="lsep" visible="gt(-85,7)" />
+        <setting id="bulb_8_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_8_play_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-87,7)" default="0" />
+        <setting id="bulb_8_play_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-88,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_play_color" type="text" label="32043" visible="gt(-89,7) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_play_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-90,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_play_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-91,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_8_play_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-92,7) + eq(-6,4)" default="0" />
+        <setting id="bulb_8_play_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-93,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_play_bg_color" type="text" label="32043" visible="gt(-94,7) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_play_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-95,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_play_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-96,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+    </category>
+    <category label="32003">
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" visible="false" />
+
+        <setting label="32021" type="lsep" visible="gt(-1,0)" />
+        <setting id="bulb_1_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_1_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-3,0)" default="0" />
+        <setting id="bulb_1_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-4,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_stop_color" type="text" label="32043" visible="gt(-5,0) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-6,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-7,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_1_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-8,0) + eq(-6,4)" default="0" />
+        <setting id="bulb_1_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-9,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_stop_bg_color" type="text" label="32043" visible="gt(-10,0) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-11,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-12,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32022" type="lsep" visible="gt(-13,1)" />
+        <setting id="bulb_2_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_2_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-15,1)" default="0" />
+        <setting id="bulb_2_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-16,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_stop_color" type="text" label="32043" visible="gt(-17,1) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-18,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-19,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_2_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-20,1) + eq(-6,4)" default="0" />
+        <setting id="bulb_2_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-21,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_stop_bg_color" type="text" label="32043" visible="gt(-22,1) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-23,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-24,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32023" type="lsep" visible="gt(-25,2)" />
+        <setting id="bulb_3_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_3_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-27,2)" default="0" />
+        <setting id="bulb_3_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-28,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_stop_color" type="text" label="32043" visible="gt(-29,2) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-30,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-31,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_3_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-32,2) + eq(-6,4)" default="0" />
+        <setting id="bulb_3_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-33,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_stop_bg_color" type="text" label="32043" visible="gt(-34,2) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-35,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-36,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32024" type="lsep" visible="gt(-37,3)" />
+        <setting id="bulb_4_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_4_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-39,3)" default="0" />
+        <setting id="bulb_4_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-40,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_stop_color" type="text" label="32043" visible="gt(-41,3) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-42,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-43,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_4_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-44,3) + eq(-6,4)" default="0" />
+        <setting id="bulb_4_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-45,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_stop_bg_color" type="text" label="32043" visible="gt(-46,3) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-47,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-48,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+
+        <setting label="32025" type="lsep" visible="gt(-49,4)" />
+        <setting id="bulb_5_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_5_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-51,4)" default="0" />
+        <setting id="bulb_5_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-52,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_stop_color" type="text" label="32043" visible="gt(-53,4) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-54,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-55,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_5_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-56,4) + eq(-6,4)" default="0" />
+        <setting id="bulb_5_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-57,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_stop_bg_color" type="text" label="32043" visible="gt(-58,4) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-59,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-60,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32026" type="lsep" visible="gt(-61,5)" />
+        <setting id="bulb_6_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_6_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-63,5)" default="0" />
+        <setting id="bulb_6_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-64,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_stop_color" type="text" label="32043" visible="gt(-65,5) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-66,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-67,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_6_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-68,5) + eq(-6,4)" default="0" />
+        <setting id="bulb_6_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-69,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_stop_bg_color" type="text" label="32043" visible="gt(-70,5) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-71,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-72,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32027" type="lsep" visible="gt(-73,6)" />
+        <setting id="bulb_7_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_7_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-75,6)" default="0" />
+        <setting id="bulb_7_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-76,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_stop_color" type="text" label="32043" visible="gt(-77,6) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-78,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-79,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_7_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-80,6) + eq(-6,4)" default="0" />
+        <setting id="bulb_7_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-81,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_stop_bg_color" type="text" label="32043" visible="gt(-82,6) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-83,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-84,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32028" type="lsep" visible="gt(-85,7)" />
+        <setting id="bulb_8_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_8_stop_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-87,7)" default="0" />
+        <setting id="bulb_8_stop_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-88,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_stop_color" type="text" label="32043" visible="gt(-89,7) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_stop_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-90,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_stop_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-91,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_8_stop_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-92,7) + eq(-6,4)" default="0" />
+        <setting id="bulb_8_stop_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-93,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_stop_bg_color" type="text" label="32043" visible="gt(-94,7) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_stop_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-95,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_stop_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-96,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+    </category>
+    <category label="32004">
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" visible="false" />
+
+        <setting label="32021" type="lsep" visible="gt(-1,0)" />
+        <setting id="bulb_1_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_1_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-3,0)" default="0" />
+        <setting id="bulb_1_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-4,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_pause_color" type="text" label="32043" visible="gt(-5,0) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-6,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-7,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_1_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-8,0) + eq(-6,4)" default="0" />
+        <setting id="bulb_1_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-9,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_pause_bg_color" type="text" label="32043" visible="gt(-10,0) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-11,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-12,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32022" type="lsep" visible="gt(-13,1)" />
+        <setting id="bulb_2_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_2_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-15,1)" default="0" />
+        <setting id="bulb_2_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-16,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_pause_color" type="text" label="32043" visible="gt(-17,1) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-18,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-19,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_2_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-20,1) + eq(-6,4)" default="0" />
+        <setting id="bulb_2_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-21,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_pause_bg_color" type="text" label="32043" visible="gt(-22,1) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-23,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-24,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32023" type="lsep" visible="gt(-25,2)" />
+        <setting id="bulb_3_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_3_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-27,2)" default="0" />
+        <setting id="bulb_3_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-28,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_pause_color" type="text" label="32043" visible="gt(-29,2) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-30,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-31,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_3_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-32,2) + eq(-6,4)" default="0" />
+        <setting id="bulb_3_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-33,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_pause_bg_color" type="text" label="32043" visible="gt(-34,2) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-35,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-36,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32024" type="lsep" visible="gt(-37,3)" />
+        <setting id="bulb_4_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_4_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-39,3)" default="0" />
+        <setting id="bulb_4_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-40,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_pause_color" type="text" label="32043" visible="gt(-41,3) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-42,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-43,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_4_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-44,3) + eq(-6,4)" default="0" />
+        <setting id="bulb_4_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-45,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_pause_bg_color" type="text" label="32043" visible="gt(-46,3) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-47,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-48,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+
+        <setting label="32025" type="lsep" visible="gt(-49,4)" />
+        <setting id="bulb_5_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_5_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-51,4)" default="0" />
+        <setting id="bulb_5_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-52,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_pause_color" type="text" label="32043" visible="gt(-53,4) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-54,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-55,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_5_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-56,4) + eq(-6,4)" default="0" />
+        <setting id="bulb_5_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-57,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_pause_bg_color" type="text" label="32043" visible="gt(-58,4) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-59,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-60,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32026" type="lsep" visible="gt(-61,5)" />
+        <setting id="bulb_6_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_6_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-63,5)" default="0" />
+        <setting id="bulb_6_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-64,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_pause_color" type="text" label="32043" visible="gt(-65,5) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-66,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-67,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_6_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-68,5) + eq(-6,4)" default="0" />
+        <setting id="bulb_6_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-69,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_pause_bg_color" type="text" label="32043" visible="gt(-70,5) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-71,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-72,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32027" type="lsep" visible="gt(-73,6)" />
+        <setting id="bulb_7_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_7_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-75,6)" default="0" />
+        <setting id="bulb_7_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-76,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_pause_color" type="text" label="32043" visible="gt(-77,6) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-78,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-79,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_7_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-80,6) + eq(-6,4)" default="0" />
+        <setting id="bulb_7_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-81,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_pause_bg_color" type="text" label="32043" visible="gt(-82,6) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-83,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-84,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32028" type="lsep" visible="gt(-85,7)" />
+        <setting id="bulb_8_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_8_pause_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-87,7)" default="0" />
+        <setting id="bulb_8_pause_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-88,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_pause_color" type="text" label="32043" visible="gt(-89,7) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_pause_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-90,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_pause_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-91,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_8_pause_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-92,7) + eq(-6,4)" default="0" />
+        <setting id="bulb_8_pause_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-93,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_pause_bg_color" type="text" label="32043" visible="gt(-94,7) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_pause_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-95,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_pause_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-96,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+    </category>
+    <category label="32008">
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" visible="false" />
+
+        <setting label="32021" type="lsep" visible="gt(-1,0)" />
+        <setting id="bulb_1_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_1_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-3,0)" default="0" />
+        <setting id="bulb_1_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-4,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_saveron_color" type="text" label="32043" visible="gt(-5,0) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-6,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-7,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_1_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-8,0) + eq(-6,4)" default="0" />
+        <setting id="bulb_1_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-9,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_saveron_bg_color" type="text" label="32043" visible="gt(-10,0) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-11,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-12,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32022" type="lsep" visible="gt(-13,1)" />
+        <setting id="bulb_2_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_2_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-15,1)" default="0" />
+        <setting id="bulb_2_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-16,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_saveron_color" type="text" label="32043" visible="gt(-17,1) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-18,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-19,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_2_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-20,1) + eq(-6,4)" default="0" />
+        <setting id="bulb_2_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-21,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_saveron_bg_color" type="text" label="32043" visible="gt(-22,1) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-23,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-24,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32023" type="lsep" visible="gt(-25,2)" />
+        <setting id="bulb_3_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_3_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-27,2)" default="0" />
+        <setting id="bulb_3_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-28,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_saveron_color" type="text" label="32043" visible="gt(-29,2) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-30,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-31,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_3_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-32,2) + eq(-6,4)" default="0" />
+        <setting id="bulb_3_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-33,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_saveron_bg_color" type="text" label="32043" visible="gt(-34,2) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-35,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-36,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32024" type="lsep" visible="gt(-37,3)" />
+        <setting id="bulb_4_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_4_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-39,3)" default="0" />
+        <setting id="bulb_4_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-40,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_saveron_color" type="text" label="32043" visible="gt(-41,3) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-42,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-43,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_4_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-44,3) + eq(-6,4)" default="0" />
+        <setting id="bulb_4_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-45,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_saveron_bg_color" type="text" label="32043" visible="gt(-46,3) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-47,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-48,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+
+        <setting label="32025" type="lsep" visible="gt(-49,4)" />
+        <setting id="bulb_5_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_5_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-51,4)" default="0" />
+        <setting id="bulb_5_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-52,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_saveron_color" type="text" label="32043" visible="gt(-53,4) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-54,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-55,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_5_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-56,4) + eq(-6,4)" default="0" />
+        <setting id="bulb_5_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-57,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_saveron_bg_color" type="text" label="32043" visible="gt(-58,4) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-59,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-60,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32026" type="lsep" visible="gt(-61,5)" />
+        <setting id="bulb_6_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_6_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-63,5)" default="0" />
+        <setting id="bulb_6_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-64,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_saveron_color" type="text" label="32043" visible="gt(-65,5) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-66,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-67,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_6_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-68,5) + eq(-6,4)" default="0" />
+        <setting id="bulb_6_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-69,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_saveron_bg_color" type="text" label="32043" visible="gt(-70,5) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-71,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-72,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32027" type="lsep" visible="gt(-73,6)" />
+        <setting id="bulb_7_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_7_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-75,6)" default="0" />
+        <setting id="bulb_7_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-76,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_saveron_color" type="text" label="32043" visible="gt(-77,6) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-78,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-79,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_7_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-80,6) + eq(-6,4)" default="0" />
+        <setting id="bulb_7_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-81,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_saveron_bg_color" type="text" label="32043" visible="gt(-82,6) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-83,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-84,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32028" type="lsep" visible="gt(-85,7)" />
+        <setting id="bulb_8_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_8_saveron_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-87,7)" default="0" />
+        <setting id="bulb_8_saveron_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-88,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_saveron_color" type="text" label="32043" visible="gt(-89,7) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_saveron_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-90,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_saveron_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-91,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_8_saveron_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-92,7) + eq(-6,4)" default="0" />
+        <setting id="bulb_8_saveron_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-93,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_saveron_bg_color" type="text" label="32043" visible="gt(-94,7) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_saveron_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-95,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_saveron_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-96,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+    </category>
+    <category label="32009">
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" visible="false" />
+
+        <setting label="32021" type="lsep" visible="gt(-1,0)" />
+        <setting id="bulb_1_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_1_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-3,0)" default="0" />
+        <setting id="bulb_1_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-4,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_saveroff_color" type="text" label="32043" visible="gt(-5,0) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-6,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-7,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_1_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-8,0) + eq(-6,4)" default="0" />
+        <setting id="bulb_1_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-9,0) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_1_saveroff_bg_color" type="text" label="32043" visible="gt(-10,0) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_1_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-11,0) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_1_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-12,0) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32022" type="lsep" visible="gt(-13,1)" />
+        <setting id="bulb_2_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" />
+
+        <setting id="bulb_2_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-15,1)" default="0" />
+        <setting id="bulb_2_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-16,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_saveroff_color" type="text" label="32043" visible="gt(-17,1) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-18,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-19,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_2_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-20,1) + eq(-6,4)" default="0" />
+        <setting id="bulb_2_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-21,1) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_2_saveroff_bg_color" type="text" label="32043" visible="gt(-22,1) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_2_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-23,1) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_2_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-24,1) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32023" type="lsep" visible="gt(-25,2)" />
+        <setting id="bulb_3_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_3_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-27,2)" default="0" />
+        <setting id="bulb_3_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-28,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_saveroff_color" type="text" label="32043" visible="gt(-29,2) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-30,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-31,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_3_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-32,2) + eq(-6,4)" default="0" />
+        <setting id="bulb_3_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-33,2) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_3_saveroff_bg_color" type="text" label="32043" visible="gt(-34,2) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_3_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-35,2) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_3_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-36,2) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32024" type="lsep" visible="gt(-37,3)" />
+        <setting id="bulb_4_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_4_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-39,3)" default="0" />
+        <setting id="bulb_4_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-40,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_saveroff_color" type="text" label="32043" visible="gt(-41,3) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-42,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-43,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_4_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-44,3) + eq(-6,4)" default="0" />
+        <setting id="bulb_4_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-45,3) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_4_saveroff_bg_color" type="text" label="32043" visible="gt(-46,3) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_4_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-47,3) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_4_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-48,3) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+
+        <setting label="32025" type="lsep" visible="gt(-49,4)" />
+        <setting id="bulb_5_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_5_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-51,4)" default="0" />
+        <setting id="bulb_5_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-52,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_saveroff_color" type="text" label="32043" visible="gt(-53,4) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-54,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-55,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_5_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-56,4) + eq(-6,4)" default="0" />
+        <setting id="bulb_5_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-57,4) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_5_saveroff_bg_color" type="text" label="32043" visible="gt(-58,4) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_5_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-59,4) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_5_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-60,4) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32026" type="lsep" visible="gt(-61,5)" />
+        <setting id="bulb_6_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_6_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-63,5)" default="0" />
+        <setting id="bulb_6_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-64,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_saveroff_color" type="text" label="32043" visible="gt(-65,5) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-66,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-67,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_6_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-68,5) + eq(-6,4)" default="0" />
+        <setting id="bulb_6_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-69,5) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_6_saveroff_bg_color" type="text" label="32043" visible="gt(-70,5) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_6_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-71,5) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_6_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-72,5) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32027" type="lsep" visible="gt(-73,6)" />
+        <setting id="bulb_7_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_7_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-75,6)" default="0" />
+        <setting id="bulb_7_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-76,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_saveroff_color" type="text" label="32043" visible="gt(-77,6) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-78,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-79,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_7_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-80,6) + eq(-6,4)" default="0" />
+        <setting id="bulb_7_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-81,6) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_7_saveroff_bg_color" type="text" label="32043" visible="gt(-82,6) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_7_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-83,6) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_7_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-84,6) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting label="32028" type="lsep" visible="gt(-85,7)" />
+        <setting id="bulb_8_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="bulb_8_saveroff_action" type="enum" label="32041" lvalues="32080|32081|32082" visible="gt(-87,7)" default="0" />
+        <setting id="bulb_8_saveroff_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-88,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_saveroff_color" type="text" label="32043" visible="gt(-89,7) + eq(-2,2) + !eq(-3,1) + !eq(-3,3) + !eq(-3,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_saveroff_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-90,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_saveroff_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-91,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+
+        <setting id="bulb_8_saveroff_bg_action" type="enum" label="32048" lvalues="32080|32081|32082" visible="gt(-92,7) + eq(-6,4)" default="0" />
+        <setting id="bulb_8_saveroff_bg_intensity" type="slider" label="32042" default="20" range="5,5,100" visible="gt(-93,7) + eq(-1,2)" option="int" subsetting="true" />
+        <setting id="bulb_8_saveroff_bg_color" type="text" label="32043" visible="gt(-94,7) + eq(-2,2) + eq(-8,4)" default="#BA2B2B" subsetting="true" />
+        <setting id="bulb_8_saveroff_bg_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-95,7) + gt(-3,0)" default="0" subsetting="true" />
+        <setting id="bulb_8_saveroff_bg_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-96,7) + eq(-1,1) + gt(-4,0)" option="int" subsetting="true" />
+    </category>
+    <category label="32005">
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" visible="false" />
+
+        <setting label="32110" type="lsep" visible="true" />
+        <setting id="OnAtStart" label="32095" type="enum" lvalues="32081|32082|32084|32085" default="0" />
+        <setting id="OnAtStart_intensity" type="slider" label="32042" default="80" range="5,5,100" visible="gt(-1,0) + !eq(-1,2)" option="int" />
+        <setting id="OnAtStart_color" type="text" label="32043" visible="gt(-2,0) + !eq(-2,2)" default="#FFFFFF" />
+        <setting id="OnAtStart_effect" type="enum" label="32044" lvalues="32070|32071" visible="gt(-3,0) + !eq(-3,2)" default="0" />
+        <setting id="OnAtStart_duration" type="slider" label="32072" default="400" range="200,200,15000" visible="gt(-4,0) + eq(-1,1) + !eq(-4,2)" option="int" />
+        <setting id="OnAtStart_blink" type="text" label="32045" visible="gt(-5,1)" default="#FF0000" />
+
+        <setting id="bulb_1_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_2_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_3_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_4_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_5_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_6_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_7_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+        <setting id="bulb_8_model" type="labelenum" label="32109" visible="false" lvalues="32120|32121|32122|32123|32124|32125" default="color" subsetting="true" />
+
+        <setting id="OnAtStart_bulb_1" label="32021" type="bool" default="false" visible="gt(-14,0) + gt(-16,0)" />
+        <setting id="OnAtStart_bulb_1_bg" label="32031" type="bool" default="false" visible="gt(-15,0) + gt(-17,0) + eq(-9,4)" />
+        <setting id="OnAtStart_bulb_2" label="32022" type="bool" default="false" visible="gt(-16,0) + gt(-18,1)" />
+        <setting id="OnAtStart_bulb_2_bg" label="32032" type="bool" default="false" visible="gt(-17,0) + gt(-19,1) + eq(-10,4)" />
+        <setting id="OnAtStart_bulb_3" label="32023" type="bool" default="false" visible="gt(-18,0) + gt(-20,2)" />
+        <setting id="OnAtStart_bulb_3_bg" label="32033" type="bool" default="false" visible="gt(-19,0) + gt(-21,2) + eq(-11,4)" />
+        <setting id="OnAtStart_bulb_4" label="32024" type="bool" default="false" visible="gt(-20,0) + gt(-22,3)" />
+        <setting id="OnAtStart_bulb_4_bg" label="32034" type="bool" default="false" visible="gt(-21,0) + gt(-24,3) + eq(-12,4)" />
+        <setting id="OnAtStart_bulb_5" label="32025" type="bool" default="false" visible="gt(-22,0) + gt(-24,4)" />
+        <setting id="OnAtStart_bulb_5_bg" label="32035" type="bool" default="false" visible="gt(-23,0) + gt(-25,4) + eq(-13,4)" />
+        <setting id="OnAtStart_bulb_6" label="32026" type="bool" default="false" visible="gt(-24,0) + gt(-26,5)" />
+        <setting id="OnAtStart_bulb_6_bg" label="32036" type="bool" default="false" visible="gt(-25,0) + gt(-27,5) + eq(-14,4)" />
+        <setting id="OnAtStart_bulb_7" label="32027" type="bool" default="false" visible="gt(-26,0) + gt(-28,6)" />
+        <setting id="OnAtStart_bulb_7_bg" label="32037" type="bool" default="false" visible="gt(-27,0) + gt(-29,6) + eq(-15,4)" />
+        <setting id="OnAtStart_bulb_8" label="32028" type="bool" default="false" visible="gt(-28,0) + gt(-30,7)" />
+        <setting id="OnAtStart_bulb_8_bg" label="32038" type="bool" default="false" visible="gt(-29,0) + gt(-31,7) + eq(-16,4)" />
+
+        <setting id="OnAtStart_timeframe" label="32047" type="bool" visible="eq(-30,1) | eq(-30,3)" default="true"/>
+        <setting id="OffAtEnd" label="32098" type="bool" default="false" visible="true" />
+        <setting label="32111" type="lsep" visible="true" />
+        <setting id="disableShort" label="32090" type="bool" default="false" />
+        <setting id="disableShortTime" type="slider" label="32091" default="60" range="5,5,120" visible="eq(-1,true)" option="int" />
+        <setting id="disablePvr" label="32096" type="bool" default="false" />
+        <setting label="32112" type="lsep" visible="true" />
+        <setting id="timeOn" label="32092" type="enum" lvalues="32081|32114|32115" default="0" />
+        <setting id="timeOnStart" type="time" label="32093" default="20:00" visible="eq(-1,1)" enable="eq(-1,1)" />
+        <setting id="timeOnEnd" type="time" label="32094" default="08:00" visible="eq(-2,1)" enable="eq(-2,1)" />
+        <setting id="sunset" type="time" label="32093" default="20:00" visible="eq(-3,2)" enable="false" />
+        <setting id="sunrise" type="time" label="32094" default="08:00" visible="eq(-4,2)" enable="false" />
+        <setting label="32113" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,byLoc)"  visible="eq(-3,1)" default="" />
+        <setting id="Lat" type="text" default="50.1167" visible="false" />
+        <setting id="Lon" type="text" default="14.5" visible="false" />
+
+        <setting label="32097" type="lsep" visible="true" />
+        <setting id="YeePriority" label="32160" type="enum" lvalues="32161|32162" default="1" />
+        <setting id="YeePauseLower" type="slider" label="32163" default="0" range="0,10,100" visible="eq(-1,1)" option="int" />
+
+    </category>
+
+    <category label="32007">
+        <setting id="AmbiOn" label="32046" type="bool" default="false" visible="false" />
+
+        <setting label="32180" type="lsep" visible="eq(-1,true)" />
+        <setting id="AmbiOn" label="32181" type="bool" visible="eq(-2,false)" />
+        <setting id="YeeSmoothen" type="slider" label="32164" default="0" range="0,10,300" visible="eq(-3,true)" option="int" />
+        <setting id="YeeAmbiMaxDay" type="slider" label="32165" default="100" range="30,10,100" visible="eq(-4,true)" option="int" />
+        <setting id="YeeAmbiMaxCivTw" type="slider" label="32166" default="100" range="30,10,100" visible="eq(-5,true)" option="int" />
+        <setting id="YeeAmbiMaxNauTw" type="slider" label="32167" default="100" range="30,10,100" visible="eq(-6,true)" option="int" />
+        <setting id="YeeAmbiMaxNight" type="slider" label="32168" default="100" range="30,10,100" visible="eq(-7,true)" option="int" />
+        <setting id="AmbiPrecision" label="32186" type="enum" lvalues="32187|32188|32189|32190" default="0" visible="eq(-8,true)" />
+    </category>
+
+    <category label="32006">
+        <setting id="AmbiOn" label="32046" type="bool" default="false" visible="false" />
+
+        <setting id="reportErrors" label="32102" type="bool" default="false" />
+        <setting id="debugRenderCapture" label="32191" type="bool" default="false" visible="eq(-2,true)" />
+        <setting id="numberOfBulbs" label="32020" type="enum" values="0|1|2|3|4|5|6|7|8" visible="false" />
+
+        <setting label="32141" type="lsep" visible="gt(-1,0)" />
+        <setting label="32131" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,bulb_play_test)"  visible="gt(-2,0)" default="" />
+        <setting label="32132" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,bulb_pause_test)"  visible="gt(-3,0)" default="" />
+        <setting label="32133" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,bulb_stop_test)"  visible="gt(-4,0)" default="" />
+        <setting label="32140" type="lsep" visible="gt(-5,0)" />
+        <setting label="32021" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee1)"  visible="gt(-6,0)" default="" />
+        <setting label="32022" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee2)"  visible="gt(-7,1)" default="" />
+        <setting label="32023" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee3)"  visible="gt(-8,2)" default="" />
+        <setting label="32024" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee4)"  visible="gt(-9,3)" default="" />
+        <setting label="32025" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee5)"  visible="gt(-10,4)" default="" />
+        <setting label="32026" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee6)"  visible="gt(-11,5)" default="" />
+        <setting label="32027" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee7)"  visible="gt(-12,6)" default="" />
+        <setting label="32028" type="action" option="close" action="RunScript(special://home/addons/service.yeemee/standalone.py,testyee8)"  visible="gt(-13,7)" default="" />
+    </category>
+    <category label="32200">
+        <setting id="numberOfControllers" label="32200" type="enum" values="0|1|2|3|4" default="0" />
+        <setting id="controller_1" type="ipaddress" label="32201" visible="gt(-1,0)" default="" />
+        <setting id="controller_2" type="ipaddress" label="32202" visible="gt(-2,1)" default="" />
+        <setting id="controller_3" type="ipaddress" label="32203" visible="gt(-3,2)" default="" />
+        <setting id="controller_4" type="ipaddress" label="32204" visible="gt(-4,3)" default="" />
+        <setting id="MsgControllerOn" label="32210" type="enum" lvalues="32211|32212|32213" visible="gt(-5,0)" default="0" />
+        <setting label="32214" type="lsep"/>
+        <setting label="32215" type="text" id="control_url_play" />
+        <setting label="32216" type="text" id="control_url_pause" />
+        <setting label="32217" type="text" id="control_url_stop" />
+        <setting id="MsgUrlOn" label="32210" type="enum" lvalues="32211|32212|32213" default="0" />
+    </category>
+</settings>
