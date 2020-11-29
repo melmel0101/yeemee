@@ -1,0 +1,506 @@
+# Kodi Media Center language file
+# Addon Name: YeeMee
+# Addon id: service.yeemee
+# Addon Provider: Dalibor Lanik
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: https://forum.kodi.tv/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: Team-Kodi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgctxt "#32000"
+msgid "YeeMee Service"
+msgstr ""
+
+msgctxt "#32001"
+msgid "IP Addresses"
+msgstr ""
+
+msgctxt "#32002"
+msgid "On video play"
+msgstr ""
+
+msgctxt "#32003"
+msgid "On video stop"
+msgstr ""
+
+msgctxt "#32004"
+msgid "On video pause"
+msgstr ""
+
+msgctxt "#32005"
+msgid "Options"
+msgstr ""
+
+msgctxt "#32006"
+msgid "Testing"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Ambi options"
+msgstr ""
+
+msgctxt "#32008"
+msgid "On saver start"
+msgstr ""
+
+msgctxt "#32009"
+msgid "On saver stop"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Bulbs"
+msgstr ""
+
+msgctxt "#32021"
+msgid "Bulb 1"
+msgstr ""
+
+msgctxt "#32022"
+msgid "Bulb 2"
+msgstr ""
+
+msgctxt "#32023"
+msgid "Bulb 3"
+msgstr ""
+
+msgctxt "#32024"
+msgid "Bulb 4"
+msgstr ""
+
+msgctxt "#32025"
+msgid "Bulb 5"
+msgstr ""
+
+msgctxt "#32026"
+msgid "Bulb 6"
+msgstr ""
+
+msgctxt "#32027"
+msgid "Bulb 7"
+msgstr ""
+
+msgctxt "#32028"
+msgid "Bulb 8"
+msgstr ""
+
+msgctxt "#32031"
+msgid "Bulb 1 bg"
+msgstr ""
+
+msgctxt "#32032"
+msgid "Bulb 2 bg"
+msgstr ""
+
+msgctxt "#32033"
+msgid "Bulb 3 bg"
+msgstr ""
+
+msgctxt "#32034"
+msgid "Bulb 4 bg"
+msgstr ""
+
+msgctxt "#32035"
+msgid "Bulb 5 bg"
+msgstr ""
+
+msgctxt "#32036"
+msgid "Bulb 6 bg"
+msgstr ""
+
+msgctxt "#32037"
+msgid "Bulb 7 bg"
+msgstr ""
+
+msgctxt "#32038"
+msgid "Bulb 8 bg"
+msgstr ""
+
+msgctxt "#32041"
+msgid "Action"
+msgstr ""
+
+msgctxt "#32042"
+msgid "Level"
+msgstr ""
+
+msgctxt "#32043"
+msgid "Color HEX code"
+msgstr ""
+
+msgctxt "#32044"
+msgid "Effect"
+msgstr ""
+
+msgctxt "#32045"
+msgid "Blink color HEX code"
+msgstr ""
+
+msgctxt "#32046"
+msgid "YeeMee Ambi Service"
+msgstr ""
+
+msgctxt "#32047"
+msgid "Turn on/off only if in timeframe"
+msgstr ""
+
+msgctxt "#32048"
+msgid "Bg Action"
+msgstr ""
+
+msgctxt "#32070"
+msgid "Immediate"
+msgstr ""
+
+msgctxt "#32071"
+msgid "Smooth"
+msgstr ""
+
+msgctxt "#32072"
+msgid "Transition duration (ms)"
+msgstr ""
+
+msgctxt "#32080"
+msgid "None"
+msgstr ""
+
+msgctxt "#32081"
+msgid "Off"
+msgstr ""
+
+msgctxt "#32082"
+msgid "On"
+msgstr ""
+
+msgctxt "#32083"
+msgid "Return to original state"
+msgstr ""
+
+msgctxt "#32084"
+msgid "Blink"
+msgstr ""
+
+msgctxt "#32085"
+msgid "Blink and On"
+msgstr ""
+
+msgctxt "#32090"
+msgid "Disable for short movies"
+msgstr ""
+
+msgctxt "#32091"
+msgid "Up to (minutes)"
+msgstr ""
+
+msgctxt "#32092"
+msgid "Light control active hours"
+msgstr ""
+
+msgctxt "#32093"
+msgid "Light control active from (until 00:00)"
+msgstr ""
+
+msgctxt "#32094"
+msgid "Light control active until (from 00:00)"
+msgstr ""
+
+msgctxt "#32095"
+msgid "Turn on at Kodi start"
+msgstr ""
+
+msgctxt "#32096"
+msgid "Disable for PVR and live streams"
+msgstr ""
+
+msgctxt "#32097"
+msgid "YeeMee - Ambi Service Priority"
+msgstr ""
+
+msgctxt "#32098"
+msgid "Turn off at Kodi exit"
+msgstr ""
+
+msgctxt "#32100"
+msgid "This will turn the selected bulb ON for 3 seconds. Press OK to test bulb number "
+msgstr ""
+
+msgctxt "#32101"
+msgid "Error while trying to connect to bulb!"
+msgstr ""
+
+msgctxt "#32102"
+msgid "Report errors"
+msgstr ""
+
+msgctxt "#32103"
+msgid "Test results:"
+msgstr ""
+
+msgctxt "#32104"
+msgid "Try to discover bulbs"
+msgstr ""
+
+msgctxt "#32105"
+msgid "Unable to discover any bulbs, check connection. This is known sometimes to fail... Make sure the bulbs have developer mode enabled! Please, wait 20 seconds and try again."
+msgstr ""
+
+msgctxt "#32106"
+msgid "Add to settings (will overwrite existing!)?"
+msgstr ""
+
+msgctxt "#32107"
+msgid "Bulb discovery"
+msgstr ""
+
+msgctxt "#32108"
+msgid "Bulb"
+msgstr ""
+
+msgctxt "#32109"
+msgid "Model"
+msgstr ""
+
+msgctxt "#32110"
+msgid "Startup"
+msgstr ""
+
+msgctxt "#32111"
+msgid "Disable"
+msgstr ""
+
+msgctxt "#32112"
+msgid "Active hours"
+msgstr ""
+
+msgctxt "#32113"
+msgid "Set sunset-sunrise"
+msgstr ""
+
+msgctxt "#32114"
+msgid "Manual"
+msgstr ""
+
+msgctxt "#32115"
+msgid "Automatic"
+msgstr ""
+
+msgctxt "#32120"
+msgid "color"
+msgstr ""
+
+msgctxt "#32121"
+msgid "mono"
+msgstr ""
+
+msgctxt "#32122"
+msgid "stripe"
+msgstr ""
+
+msgctxt "#32123"
+msgid "ceiling"
+msgstr ""
+
+msgctxt "#32124"
+msgid "ceiling4"
+msgstr ""
+
+msgctxt "#32125"
+msgid "ct_bulb"
+msgstr ""
+
+msgctxt "#32131"
+msgid "Play"
+msgstr ""
+
+msgctxt "#32132"
+msgid "Pause"
+msgstr ""
+
+msgctxt "#32133"
+msgid "Stop"
+msgstr ""
+
+msgctxt "#32140"
+msgid "Test single bulb(s)"
+msgstr ""
+
+msgctxt "#32141"
+msgid "Simulate play functionality"
+msgstr ""
+
+msgctxt "#32150"
+msgid "Use as YeeMee Ambi"
+msgstr ""
+
+msgctxt "#32151"
+msgid "Brightness bias (-%)"
+msgstr ""
+
+msgctxt "#32160"
+msgid "Priority on pause"
+msgstr ""
+
+msgctxt "#32161"
+msgid "YeeMee"
+msgstr ""
+
+msgctxt "#32162"
+msgid "YeeMee Ambi"
+msgstr ""
+
+msgctxt "#32163"
+msgid "Max brightness on pause"
+msgstr ""
+
+msgctxt "#32164"
+msgid "Smoothen Ambi effect by (ms)"
+msgstr ""
+
+msgctxt "#32165"
+msgid "Ambi max brightness - day"
+msgstr ""
+
+msgctxt "#32166"
+msgid "Ambi max brightness - civil twilight"
+msgstr ""
+
+msgctxt "#32167"
+msgid "Ambi max brightness - nautic twilight"
+msgstr ""
+
+msgctxt "#32168"
+msgid "Ambi max brightness - night"
+msgstr ""
+
+msgctxt "#32170"
+msgid "Off"
+msgstr ""
+
+msgctxt "#32171"
+msgid "Whole Screen"
+msgstr ""
+
+msgctxt "#32172"
+msgid "Left 1/4"
+msgstr ""
+
+msgctxt "#32173"
+msgid "Left 1/3"
+msgstr ""
+
+msgctxt "#32174"
+msgid "Left 1/2"
+msgstr ""
+
+msgctxt "#32175"
+msgid "Right 1/4"
+msgstr ""
+
+msgctxt "#32176"
+msgid "Right 1/3"
+msgstr ""
+
+msgctxt "#32177"
+msgid "Right 1/2"
+msgstr ""
+
+msgctxt "#32178"
+msgid "Top"
+msgstr ""
+
+msgctxt "#32179"
+msgid "Bottom"
+msgstr ""
+
+msgctxt "#32180"
+msgid "Ambi display options"
+msgstr ""
+
+msgctxt "#32181"
+msgid "Enable Ambi to show options"
+msgstr ""
+
+msgctxt "#32186"
+msgid "Ambi precision"
+msgstr ""
+
+msgctxt "#32187"
+msgid "Regular"
+msgstr ""
+
+msgctxt "#32188"
+msgid "Better"
+msgstr ""
+
+msgctxt "#32189"
+msgid "High"
+msgstr ""
+
+msgctxt "#32190"
+msgid "Ultra High"
+msgstr ""
+
+msgctxt "#32191"
+msgid "Debug RenderCapture"
+msgstr ""
+
+msgctxt "#32200"
+msgid "Controllers"
+msgstr ""
+
+msgctxt "#32201"
+msgid "Controller 1"
+msgstr ""
+
+msgctxt "#32202"
+msgid "Controller 2"
+msgstr ""
+
+msgctxt "#32203"
+msgid "Controller 3"
+msgstr ""
+
+msgctxt "#32204"
+msgid "Controller 4"
+msgstr ""
+
+msgctxt "#32210"
+msgid "Send message on"
+msgstr ""
+
+msgctxt "#32211"
+msgid "Audio"
+msgstr ""
+
+msgctxt "#32212"
+msgid "Video"
+msgstr ""
+
+msgctxt "#32213"
+msgid "Audio and video"
+msgstr ""
+
+msgctxt "#32214"
+msgid "Controller URLs"
+msgstr ""
+
+msgctxt "#32215"
+msgid "Open URL on play"
+msgstr ""
+
+msgctxt "#32216"
+msgid "Open URL on pause"
+msgstr ""
+
+msgctxt "#32217"
+msgid "Open URL on stop"
+msgstr ""
+
