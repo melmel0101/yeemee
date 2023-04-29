@@ -1,11 +1,12 @@
 # ============================================================
-# YeeMee - Version 4.7 by D. Lanik (2017)
+# YeeMee - Version 5.0 by D. Lanik (2017)
 # ------------------------------------------------------------
 # Control YeeLight bulbs from Kodi
 # ------------------------------------------------------------
 # License: GPL (http://www.gnu.org/licenses/gpl-3.0.html)
 # ============================================================
 
+import xbmcvfs
 import xbmc
 import xbmcaddon
 import xbmcgui
@@ -15,13 +16,13 @@ import requests
 import re
 import os
 import math
-import thread
+import _thread
 import time
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import _strptime                        # this is because of the bug with strptime() in Python (https://bugs.python.org/issue7980)
 import lib.webcolors as webcolors
 import datetime
-from distutils.util import strtobool
+# from distutils.util import strtobool
 from colorsys import rgb_to_hls
 from colorsys import hls_to_rgb
 from PIL import Image
@@ -144,7 +145,7 @@ def mystr2time(funct, format):
         except Exception:
             mytime = datetime.datetime.combine(datetime.date(1, 1, 1), datetime.time(0, 0, 0))
 
-    except ValueError, v:
+    except ValueError as v:
         ulr = len(v.args[0].partition('unconverted data remains: ')[2])
         if ulr:
             mytime = datetime.datetime.strptime(funct[:-ulr], format)
@@ -312,12 +313,12 @@ def GetSettings(par1):
     errors = False
     errstr = ""
 
-    AmbiOn = bool(strtobool(str(__addon__.getSetting('AmbiOn').title())))
-    ServiceOn = bool(strtobool(str(__addon__.getSetting('ServiceOn').title())))
-    disablePvr = bool(strtobool(str(__addon__.getSetting('disablePvr').title())))
+    AmbiOn = bool('true')
+    ServiceOn = bool('true')
+    disablePvr = bool('true')
     numberOfBulbs = int(__addon__.getSetting("numberOfBulbs"))
-    reportErrors = bool(strtobool(str(__addon__.getSetting('reportErrors').title())))
-    debugRenderCapture = bool(strtobool(str(__addon__.getSetting('debugRenderCapture').title())))
+    reportErrors = bool('true')
+    debugRenderCapture = bool('true')
 
     YeePriority = int(__addon__.getSetting("YeePriority"))
     YeePauseLower = int(__addon__.getSetting("YeePauseLower"))
@@ -330,7 +331,7 @@ def GetSettings(par1):
     xbmc.log("YEEMEE >> AMBI SMOOTHEN (MS) >> " + str(YeeSmoothen))
     xbmc.log("YEEMEE >> YEMME - AMBI PRECISION >> " + str(AmbiPrecision))
 
-    OffAtEnd = bool(strtobool(str(__addon__.getSetting('OffAtEnd').title())))
+    OffAtEnd = bool('true')
     OnAtStart = int(__addon__.getSetting('OnAtStart'))
 
     xbmc.log("YEEMEE >> REPORT ERRORS >> " + str(reportErrors))
@@ -343,7 +344,7 @@ def GetSettings(par1):
         OnAtStart_effect = int(__addon__.getSetting("OnAtStart_effect"))
         OnAtStart_duration = int(__addon__.getSetting("OnAtStart_duration"))
         OnAtStart_intensity = int(__addon__.getSetting("OnAtStart_intensity"))
-        OnAtStart_timeframe = bool(strtobool(str(__addon__.getSetting('OnAtStart_timeframe').title())))
+        OnAtStart_timeframe = bool('true')
 
         if OnAtStart_color[0] != "#":
             OnAtStart_color = "#" + OnAtStart_color
@@ -370,7 +371,7 @@ def GetSettings(par1):
         xbmc.log('YEEMEE >> AT START DURATION >> ' + str(OnAtStart_duration))
         xbmc.log('YEEMEE >> AT START EFFECT >> ' + str(OnAtStart_effect))
 
-    disableShort = bool(strtobool(str(__addon__.getSetting('disableShort').title())))
+    disableShort = bool('true')
     if disableShort:
         disableShortTime = int(__addon__.getSetting('disableShortTime'))
         xbmc.log("YEEMEE >> DISABLE FOR SHORT FILMS >>" + str(disableShortTime) + "<< MIN")
@@ -417,9 +418,9 @@ def GetSettings(par1):
 
             bulbs[c].model = __addon__.getSetting(bulbmodel)
 
-            bulbs[c].on_start = bool(strtobool(str(__addon__.getSetting(bulbStart).title())))
+            bulbs[c].on_start = bool('true')
             if bulbs[c].model == 'ceiling4':
-                bulbs[c].on_bg_start = bool(strtobool(str(__addon__.getSetting(bulbStart_bg).title())))
+                bulbs[c].on_bg_start = bool('true')
 
             bulbs[c].applyColorsH = 0
             bulbs[c].applyColorsL = 0
@@ -701,7 +702,7 @@ def getLoc():
         lng = str(data["lon"])
         response = data["status"]
     except Exception as e:
-        xbmc.log("YEEMEE >> ERROR GETTING LOCATION: " + str(e).encode('utf-8'))
+        xbmc.log("YEEMEE >> ERROR GETTING LOCATION: " + str(e))
         xbmc.executebuiltin("Dialog.Close(busydialog)")
 
     if response == "success":
@@ -1014,7 +1015,7 @@ def url_controller(action):
 
     if link != "" and validURL(link):
         try:
-            f = urllib.urlopen(link)
+            f = urllib.request.urlopen(link)
             page = f.read()
         except Exception:
             pass
@@ -1131,9 +1132,9 @@ def state_changed(player_state):
 
         elif player_state == "start":
             stopHandler = False
-            thread.start_new_thread(grabloop, (None,))
+            _thread.start_new_thread(grabloop, (None,))
             host_ip = get_ip()
-            thread.start_new_thread(startServer, (host_ip,))
+            _thread.start_new_thread(startServer, (host_ip,))
 
             for x in bulbs:
                 if x.model == "ceiling4":
@@ -1852,14 +1853,38 @@ class Yeelight:
     def connect(self, command, bulb_ip, bulb_port):
         try:
             tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            msg = json.dumps(command) + "\r\n"
-            tcp_socket.connect((bulb_ip, int(bulb_port)))
-            tcp_socket.send(msg)
-            data = tcp_socket.recv(1024)
-            tcp_socket.close()
-            return data
+        except Exception as e:
+            xbmc.log("YEEMEE >> CONNECT ERROR1 %s" % (e))
+
+        try:
+            msg = bytes(json.dumps(command) + "\r\n", 'utf8')
         except Exception as e:
             xbmc.log("YEEMEE >> CONNECT ERROR %s" % (e))
+
+        try:
+            tcp_socket.connect((bulb_ip, int(bulb_port)))
+        except Exception as e:
+            xbmc.log("YEEMEE >> CONNECT ERROR2 %s" % (e))
+
+        try:
+            tcp_socket.send(msg)
+        except Exception as e:
+            xbmc.log("YEEMEE >> CONNECT ERROR3 %s" % (e))
+
+        try:
+            data = tcp_socket.recv(1024)
+        except Exception as e:
+            xbmc.log("YEEMEE >> CONNECT ERROR4 %s" % (e))
+
+        try:
+            tcp_socket.close()
+        except Exception as e:
+            xbmc.log("YEEMEE >> CONNECT ERROR5 %s" % (e))
+
+        try:
+            return data
+        except Exception as e:
+            xbmc.log("YEEMEE >> CONNECT ERROR6 %s" % (e))
 
 
 # ------------------------------------------------------------
@@ -1958,7 +1983,7 @@ class Screenshot:
 
             cropped_img = ci.crop(area)                                # crop to only selected area
             current_milli_time = int(round(time.time() * 1000))
-            savepath = os.path.join(xbmc.translatePath("special://temp/"), bulbnr + "_" + str(current_milli_time) + ".jpg")
+            savepath = os.path.join(xbmcvfs.translatePath("special://temp/"), bulbnr + "_" + str(current_milli_time) + ".jpg")
             cropped_img.save(savepath)
 
         return hls[0], hls[1], hls[2]
@@ -2097,7 +2122,7 @@ def handler(clientsock, addr):
                     rgbcolor = webcolors.rgb_percent_to_hex([r, g, b])
                     color = int(rgbcolor[1:], 16)
                     data = json.dumps({"id": 1, "method": "set_rgb", "params": [color, effect, YeeSmoothen]}) + "\r\n"
-                    clientsock.send(data)
+                    clientsock.send(bytes(data,'utf-8')) # changed to bytes
 
                 exrround = rround
                 exground = ground
@@ -2110,7 +2135,7 @@ def handler(clientsock, addr):
                     if YeePauseLower == 0:
                         YeePauseLower = 1
                     data = json.dumps({"id": 1, "method": "set_bright", "params": [YeePauseLower, effect, YeeSmoothen]}) + "\r\n"
-                    clientsock.send(data)
+                    clientsock.send(bytes(data,'utf-8')) # changed to bytes
             else:
                 lumiround = (lumi + 9) // 10 * 10
 
@@ -2122,7 +2147,7 @@ def handler(clientsock, addr):
                         lumi = int((lumi * (100 - activeBulb.bias)) / 100)
 
                     data = json.dumps({"id": 1, "method": "set_bright", "params": [lumi, effect, YeeSmoothen]}) + "\r\n"
-                    clientsock.send(data)
+                    clientsock.send(bytes(data,'utf-8')) # changed to bytes
 
                 exlumi = lumiround
 
@@ -2181,7 +2206,7 @@ def startServer(HOST):
             xbmc.log('YEEMEE >> SERVER >> EXCEPTION: ' + str(e))
 
         xbmc.log('YEEMEE >> SERVER >> CONNECTION FROM: ' + str(addr) + ' ACCEPTED')
-        thread.start_new_thread(handler, (clientsock, addr))
+        _thread.start_new_thread(handler, (clientsock, addr))
 
     try:
         clientsock.shutdown(socket.SHUT_RDWR)
@@ -2331,8 +2356,8 @@ def grabloop(arg):
 
 
 __addon__ = xbmcaddon.Addon(id='service.yeemee')
-__addondir__ = xbmc.translatePath(__addon__.getAddonInfo('profile').decode('utf-8'))
-__addonwd__ = xbmc.translatePath(__addon__.getAddonInfo('path').decode("utf-8"))
+__addondir__ = xbmcvfs.translatePath(__addon__.getAddonInfo('profile'))
+__addonwd__ = xbmcvfs.translatePath(__addon__.getAddonInfo('path'))
 __addonname__ = __addon__.getAddonInfo('name')
 __version__ = __addon__.getAddonInfo('version')
 
@@ -2388,7 +2413,7 @@ Sunset = ""
 nauticTW = ""
 civilTW = ""
 thread_started = False
-lock = thread.allocate_lock()
+lock = _thread.allocate_lock()
 debugRenderCapture = False
 
 cl_exlumi = 100
