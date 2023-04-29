@@ -1,5 +1,5 @@
 # ============================================================
-# YeeMee - Version 4.7 by D. Lanik (2017)
+# YeeMee - Version 5.0 by D. Lanik (2017)
 # ------------------------------------------------------------
 # Control YeeLight bulbs from Kodi
 # ------------------------------------------------------------
@@ -7,13 +7,14 @@
 # ============================================================
 
 import xbmc
+import xbmcvfs
 import xbmcaddon
 import xbmcgui
 import socket
 import sys
 import os
 import random
-from urlparse import urlparse
+from urllib.parse import urlparse
 from standalone import RepeatedTimer, OverlayText
 
 # ============================================================
@@ -96,8 +97,8 @@ def discover_bulbs(timeout=3):
 
 
 __addon__ = xbmcaddon.Addon(id='service.yeemee')
-__addondir__ = xbmc.translatePath(__addon__.getAddonInfo('profile').decode('utf-8'))
-__addonwd__ = xbmc.translatePath(__addon__.getAddonInfo('path').decode("utf-8"))
+__addondir__ = xbmcvfs.translatePath(__addon__.getAddonInfo('profile').decode('utf-8'))
+__addonwd__ = xbmcvfs.translatePath(__addon__.getAddonInfo('path').decode("utf-8"))
 __addonname__ = __addon__.getAddonInfo('name')
 __version__ = __addon__.getAddonInfo('version')
 
