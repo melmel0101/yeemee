@@ -1,10 +1,10 @@
-<addon id="service.yeemee" name="YeeMee" provider-name="Dalibor Lanik" version="4.61"> 
+<addon id="service.yeemee" name="YeeMee" provider-name="Dalibor Lanik" version="5.00"> 
   <requires>
-    <import addon="xbmc.python" version="2.1.0" /> 
+    <import addon="xbmc.python" version="3.0.0" /> 
     <import addon="script.module.requests" />
     <import addon="script.module.pil" version="1.1.7" />
   </requires>
-  <extension library="service.py" point="xbmc.service" start="startup"> 
+  <extension library="service1.py" point="xbmc.service" start="startup"> 
   </extension>
     <extension library="standalone.py" point="xbmc.python.script">
         <provides>executable</provides>
@@ -17,8 +17,8 @@
     <forum>http://forum.kodi.tv/showthread.php?tid=313197</forum>
     <email>dalibor@lanik.org</email>
     <description lang="en_GB">Control YeeLight bulbs from Kodi</description>
-    <news>v4.7 [CR]
-- Trigger to control lights on screensaver start and end [CR]
+    <news>v5.0 [CR]
+- Python 3 version [CR]
 </news>
     <assets>
         <icon>icon.png</icon>
