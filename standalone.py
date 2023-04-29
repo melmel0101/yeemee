@@ -1,5 +1,5 @@
 # ============================================================
-# YeeMee - Version 4.7 by D. Lanik (2017)
+# YeeMee - Version 5.0 by D. Lanik (2017)
 # ------------------------------------------------------------
 # Control YeeLight bulbs from Kodi
 # ------------------------------------------------------------
@@ -7,6 +7,7 @@
 # ============================================================
 
 import xbmc
+import xbmcvfs
 import xbmcaddon
 import xbmcgui
 import socket
@@ -18,8 +19,8 @@ import requests
 from datetime import datetime
 from threading import Timer
 from xml.dom import minidom
-from distutils.util import strtobool
-from service import Yeelight
+from service1 import Yeelight
+from service1 import strtobool
 
 # ============================================================
 # Class for timer
@@ -109,7 +110,7 @@ class OverlayText(object):
 # ============================================================
 
     def _get_skin_resolution(self):
-        xmlFile = os.path.join(xbmc.translatePath("special://skin/"), "addon.xml")
+        xmlFile = os.path.join(xbmcvfs.translatePath("special://skin/"), "addon.xml")
         xmldoc = minidom.parse(xmlFile)
 
         res = xmldoc.getElementsByTagName("res")
@@ -415,8 +416,8 @@ def StopAni():
 
 
 __addon__ = xbmcaddon.Addon(id='service.yeemee')
-__addondir__ = xbmc.translatePath(__addon__.getAddonInfo('profile').decode('utf-8'))
-__addonwd__ = xbmc.translatePath(__addon__.getAddonInfo('path').decode("utf-8"))
+__addondir__ = xbmcvfs.translatePath(__addon__.getAddonInfo('profile'))
+__addonwd__ = xbmcvfs.translatePath(__addon__.getAddonInfo('path'))
 __addonname__ = __addon__.getAddonInfo('name')
 __version__ = __addon__.getAddonInfo('version')
 
