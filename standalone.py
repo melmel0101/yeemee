@@ -6,9 +6,10 @@
 # License: GPL (http://www.gnu.org/licenses/gpl-3.0.html)
 # ============================================================
 
-import xbmc
 import xbmcvfs
+import xbmc
 import xbmcaddon
+# from kodi_six import xbmc, xbmcaddon
 import xbmcgui
 import socket
 import json
@@ -19,8 +20,8 @@ import requests
 from datetime import datetime
 from threading import Timer
 from xml.dom import minidom
-from service1 import Yeelight
-from service1 import strtobool
+#from distutils.util import strtobool
+from service import Yeelight
 
 # ============================================================
 # Class for timer
@@ -516,11 +517,12 @@ if __name__ == '__main__':
     elif arg == "bulb8_off":
         BulbOff(8)
     elif arg == "service_start":
-        ServiceOn = bool(strtobool(str(__addon__.getSetting('ServiceOn').title())))
+        ServiceOn = bool('false')
         if not ServiceOn:
             __addon__.setSetting('ServiceOn', 'true')
     elif arg == "service_stop":
-        ServiceOn = bool(strtobool(str(__addon__.getSetting('ServiceOn').title())))
+        ServiceOn = bool('false')
+       # ServiceOn = bool(strtobool(str(__addon__.getSetting('ServiceOn').title())))
         if ServiceOn:
             __addon__.setSetting('ServiceOn', 'false')
 
